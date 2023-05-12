@@ -15,26 +15,23 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet("/novaEmpresa")
 public class NovaEmpresaServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		Empresa empresa = new Empresa();
-		System.out.println("Cadastrando nova empresa");
+    private static final long serialVersionUID = 1L;
 
-		String nomeEmpresa = request.getParameter("nome");
-	
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+            throws ServletException, IOException {
+        System.out.println("Cadastrando nova empresa");
 
-		empresa.setNome(nomeEmpresa);
-		
-		
-		Banco banco = new Banco();
-		banco.adiciona(empresa);
-		
-		//chamar o JSP
-		RequestDispatcher rd = request.getRequestDispatcher("//novaEmpresaCriada.jsp");
-		request.setAttribute("empresa", empresa.getNome());
-		rd.forward(request, response);
-	}
+        String nomeEmpresa = request.getParameter("nome");
+        Empresa empresa = new Empresa();
+        empresa.setNome(nomeEmpresa);
 
+        Banco banco = new Banco();
+        banco.adiciona(empresa);
+
+        //chamar o JSP
+        RequestDispatcher rd = request.getRequestDispatcher("/novaEmpresaCriada.jsp");
+        request.setAttribute("empresa", empresa.getNome());
+        rd.forward(request, response);
+    }
 }
