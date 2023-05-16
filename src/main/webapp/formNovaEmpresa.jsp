@@ -1,3 +1,5 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:url value="/novaEmpresa" var="linkServletNovaEmpresa"/>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -7,6 +9,7 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
 	<header>
 		<div class="caixa">
 
@@ -21,7 +24,7 @@
 	</header>
 
 	<main>
-		<form action="/gerenciador/novaEmpresa" method="post">
+		<form action="${linkServletNovaEmpresa}" method="post">
 			<label for="nomesobrenome">Nome e sobrenome</label> <input
 				type="text" name="nome" class="input-padrao" required>
 
