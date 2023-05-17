@@ -5,7 +5,7 @@
 Empresa ${ empresa } cadastrada com sucesso!
 </c:if>
 <c:if test="${not empty empresa }">
-Nenhuma empresa cadastrada!
+Nenhuma empresa cadastrada! 
 </c:if>
 
 
