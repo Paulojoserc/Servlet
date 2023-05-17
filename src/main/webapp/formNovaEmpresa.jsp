@@ -25,10 +25,12 @@
 
 	<main>
 		<form action="${linkServletNovaEmpresa}" method="post">
-			<label for="nomesobrenome">Nome e sobrenome</label> <input
+			<label for="nome">Nome</label> <input
 				type="text" name="nome" class="input-padrao" required>
+			<label for="data">Data</label> <input
+				type="text" name="data" class="input-padrao" required>	
 
-			<input type="submit" value="Enviar formulário" class="enviar"/>
+			<input type="submit" value="Enviar formulario" class="enviar"/>
 		</form>
 
 
