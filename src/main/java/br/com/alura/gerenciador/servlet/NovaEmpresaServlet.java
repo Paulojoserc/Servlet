@@ -20,7 +20,7 @@ public class NovaEmpresaServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		System.out.println("Cadastrando nova empresa");
 
@@ -42,7 +42,7 @@ public class NovaEmpresaServlet extends HttpServlet {
 		banco.adiciona(empresa);
 
 		// chamar o JSP
-		RequestDispatcher rd = request.getRequestDispatcher("/novaEmpresaCriada.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/listaEmpresas");
 		request.setAttribute("empresa", empresa.getNome());
 		rd.forward(request, response);
 	}
