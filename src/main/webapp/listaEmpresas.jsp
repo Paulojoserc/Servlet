@@ -8,7 +8,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Java Standard Taglib</title>
+<title>Lista de empresas</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -24,6 +25,7 @@ Empresa ${ empresa } cadastrada com sucesso!
 
 			<li>${empresa.nome }-<fmt:formatDate
 					value="${empresa.dataAbertura }" pattern="dd/MM/yyyy" />
+			<a href="/gerenciador/mostraEmpresa?id=${empresa.id }">edita</a>		
 			<a href="/gerenciador/removeEmpresa?id=${empresa.id }">remove</a>		
 			</li>
 
