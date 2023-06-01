@@ -6,7 +6,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -35,7 +34,7 @@ public class AlteraEmpresaServlet extends HttpServlet {
 		}
 		System.out.println(id);
 		Banco banco = new Banco();
-		Empresa empresa = banco.buscaEmpresaPeloId(id);
+		Empresa empresa = banco.buscaEmpresaPelaId(id);
 		empresa.setNome(nomeEmpresa);
 		empresa.setDataAbertura(dataAbertura);
 		
